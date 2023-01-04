@@ -1,8 +1,8 @@
-ROM nginx
+FROM nginx
 
-LABEL   MAINTENER="change me" \
-        NIM="change me" \
-        KELAS="change me"
+LABEL   MAINTENER="WAHYUDI AND NOP NOP" \
+        NIM="1121130039 1121130066" \
+        KELAS="CN SE"
 
 COPY html /usr/share/nginx/html
 

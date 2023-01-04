@@ -1,14 +1,12 @@
-name: GitHub Actions to Dockerhub
-run-name: ${{ github.actor }} Run GitHub Actions to upload docker image 🚀
+name: Automatic push git-action
+run-name: ${{ github.actor }} Melakukan push dockerhub
 on: [push]
 jobs:
-  build-and-push-image:
+  BUILD-AND-PUSH-IMAGE:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: build and tag image
-      run: docker build . --file Dockerfile --tag wabayau/kominfo:v1
-    
-    - name: push to dockerhub
-      run: docker login -u wabayau -p ${{secrets.KUNCI_MENAKLUKAN_JAWA}} && docker push wabayau/kominfo:v1
+      - uses: actions/checkout@v3
+      - name: build and tag image
+        run: docker build . --file Dockerfile --tag wabayau/kominfo:v1
+      - name: push image to docker hub
+        run: docker login -u wabayau -p ${{secrets.KUNCI_MENAKLUKAN_JAWA}} && docker push wabayau/kominfo:v1
